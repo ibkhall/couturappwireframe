@@ -1,0 +1,1666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CouturApp - Wireframes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .screens-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .screen-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .screen-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .screen-card.active {
+            display: block;
+        }
+
+        .screen-title {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 20px;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+
+        .phone-frame {
+            background: #f5f5f5;
+            padding: 20px;
+            position: relative;
+            min-height: 600px;
+        }
+
+        /* Wireframe Components */
+        .wireframe {
+            background: white;
+            border: 2px solid #333;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .status-bar {
+            height: 24px;
+            background: #e0e0e0;
+            border-bottom: 1px solid #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10px;
+            font-size: 10px;
+        }
+
+        .app-header {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #333;
+        }
+
+        .app-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .content {
+            padding: 15px;
+            min-height: 450px;
+        }
+
+        .bottom-nav {
+            border-top: 2px solid #333;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            background: #f9f9f9;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            font-size: 11px;
+            color: #666;
+        }
+
+        .nav-item.active {
+            color: #667eea;
+        }
+
+        .nav-icon {
+            width: 24px;
+            height: 24px;
+            border: 2px solid currentColor;
+            border-radius: 4px;
+        }
+
+        .card {
+            border: 2px solid #333;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 12px;
+            background: white;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .card-title {
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .badge {
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: bold;
+            border: 2px solid #333;
+        }
+
+        .badge.urgent {
+            background: #ff4444;
+            color: white;
+        }
+
+        .badge.in-progress {
+            background: #ffa500;
+            color: white;
+        }
+
+        .badge.completed {
+            background: #4caf50;
+            color: white;
+        }
+
+        .card-detail {
+            font-size: 12px;
+            color: #666;
+            margin: 4px 0;
+        }
+
+        .stat-box {
+            border: 2px solid #333;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 12px;
+            background: #f9f9f9;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .input-field {
+            border: 2px solid #333;
+            border-radius: 6px;
+            padding: 10px;
+            margin-bottom: 12px;
+            background: white;
+        }
+
+        .input-label {
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .input-box {
+            height: 36px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            background: #f9f9f9;
+        }
+
+        .button {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #333;
+            border-radius: 6px;
+            background: #667eea;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .button.secondary {
+            background: white;
+            color: #333;
+        }
+
+        .list-item {
+            border: 2px solid #333;
+            border-radius: 6px;
+            padding: 12px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+        }
+
+        .list-item-content {
+            flex: 1;
+        }
+
+        .list-item-title {
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .list-item-subtitle {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .icon-button {
+            width: 32px;
+            height: 32px;
+            border: 2px solid #333;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+        }
+
+        .fab {
+            position: absolute;
+            bottom: 80px;
+            right: 20px;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: #667eea;
+            border: 2px solid #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .chart-placeholder {
+            height: 200px;
+            border: 2px solid #333;
+            border-radius: 8px;
+            background: #f9f9f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0e0e0;
+            margin-bottom: 12px;
+        }
+
+        .avatar {
+            width: 64px;
+            height: 64px;
+            border: 2px solid #333;
+            border-radius: 50%;
+            background: #e0e0e0;
+        }
+
+        .profile-info {
+            flex: 1;
+        }
+
+        .profile-name {
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .profile-detail {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .section-title {
+            font-weight: bold;
+            font-size: 14px;
+            margin: 16px 0 8px 0;
+            color: #333;
+        }
+
+        .tab-bar {
+            display: flex;
+            border-bottom: 2px solid #e0e0e0;
+            margin-bottom: 12px;
+        }
+
+        .tab {
+            flex: 1;
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: bold;
+            color: #666;
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab.active {
+            color: #667eea;
+            border-bottom-color: #667eea;
+        }
+
+        .measurement-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .measurement-item {
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            padding: 8px;
+            background: #f9f9f9;
+        }
+
+        .measurement-label {
+            font-size: 10px;
+            color: #666;
+            margin-bottom: 2px;
+        }
+
+        .measurement-value {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .screen-selector {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .screen-btn {
+            padding: 10px 20px;
+            background: white;
+            border: 2px solid #333;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .screen-btn:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .screen-btn.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: 20px;
+        }
+
+        .modal-overlay.show {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 16px;
+            max-width: 400px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: white;
+            border: 2px solid #333;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Auth Screens Styles */
+        .auth-screen {
+            min-height: 600px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .auth-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 60px 20px 40px;
+            text-align: center;
+            color: white;
+        }
+
+        .auth-logo {
+            width: 80px;
+            height: 80px;
+            border: 3px solid white;
+            border-radius: 20px;
+            margin: 0 auto 20px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .auth-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .auth-subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .auth-content {
+            flex: 1;
+            padding: 30px 20px;
+            background: white;
+        }
+
+        .social-buttons {
+            margin-bottom: 30px;
+        }
+
+        .social-button {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #333;
+            border-radius: 8px;
+            background: white;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .social-button:hover {
+            background: #f5f5f5;
+        }
+
+        .social-button.google {
+            color: #333;
+        }
+
+        .social-button.facebook {
+            background: #1877F2;
+            color: white;
+            border-color: #1877F2;
+        }
+
+        .social-button.facebook:hover {
+            background: #166fe5;
+        }
+
+        .social-icon {
+            width: 24px;
+            height: 24px;
+            border: 2px solid currentColor;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 25px 0;
+            color: #999;
+            font-size: 13px;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .divider span {
+            padding: 0 15px;
+        }
+
+        .input-group {
+            margin-bottom: 16px;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #333;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            background: #f9f9f9;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #667eea;
+            background: white;
+        }
+
+        .forgot-password {
+            text-align: right;
+            margin: -8px 0 16px 0;
+        }
+
+        .forgot-password a {
+            font-size: 12px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .auth-button {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #333;
+            border-radius: 8px;
+            background: #667eea;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 10px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .auth-footer {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .auth-footer a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 16px 0;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .checkbox-group input {
+            width: 18px;
+            height: 18px;
+            border: 2px solid #ddd;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>CouturApp Wireframes</h1>
+            <p>Tailoring Workshop Management System</p>
+        </div>
+
+        <div class="screen-selector">
+            <button class="screen-btn active" onclick="showAllScreens()">All Screens</button>
+            <button class="screen-btn" onclick="showScreen('login')">Login</button>
+            <button class="screen-btn" onclick="showScreen('register')">Register</button>
+            <button class="screen-btn" onclick="showScreen('dashboard')">Dashboard</button>
+            <button class="screen-btn" onclick="showScreen('orders')">Orders</button>
+            <button class="screen-btn" onclick="showScreen('order-detail')">Order Detail</button>
+            <button class="screen-btn" onclick="showScreen('create-order')">Create Order</button>
+            <button class="screen-btn" onclick="showScreen('customers')">Customers</button>
+            <button class="screen-btn" onclick="showScreen('customer-profile')">Customer Profile</button>
+            <button class="screen-btn" onclick="showScreen('measurements')">Measurements</button>
+            <button class="screen-btn" onclick="showScreen('tailors')">Tailors</button>
+            <button class="screen-btn" onclick="showScreen('statistics')">Statistics</button>
+        </div>
+
+        <div class="screens-grid" id="screensGrid">
+            <!-- Login Screen -->
+            <div class="screen-card" data-screen="login">
+                <div class="screen-title">Login Screen</div>
+                <div class="phone-frame">
+                    <div class="wireframe auth-screen">
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <span>■■■</span>
+                        </div>
+                        <div class="auth-header">
+                            <div class="auth-logo">C</div>
+                            <div class="auth-title">Welcome Back</div>
+                            <div class="auth-subtitle">Login to manage your workshop</div>
+                        </div>
+                        <div class="auth-content">
+                            <div class="social-buttons">
+                                <div class="social-button google">
+                                    <div class="social-icon">G</div>
+                                    <span>Continue with Google</span>
+                                </div>
+                                <div class="social-button facebook">
+                                    <div class="social-icon">f</div>
+                                    <span>Continue with Facebook</span>
+                                </div>
+                            </div>
+
+                            <div class="divider">
+                                <span>OR</span>
+                            </div>
+
+                            <div class="input-group">
+                                <label>Email</label>
+                                <input type="email" placeholder="Enter your email">
+                            </div>
+
+                            <div class="input-group">
+                                <label>Password</label>
+                                <input type="password" placeholder="Enter your password">
+                            </div>
+
+                            <div class="forgot-password">
+                                <a href="#">Forgot Password?</a>
+                            </div>
+
+                            <div class="auth-button">Login</div>
+
+                            <div class="auth-footer">
+                                Don't have an account? <a href="#">Sign Up</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Register Screen -->
+            <div class="screen-card" data-screen="register">
+                <div class="screen-title">Register Screen</div>
+                <div class="phone-frame">
+                    <div class="wireframe auth-screen">
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <span>■■■</span>
+                        </div>
+                        <div class="auth-header">
+                            <div class="auth-logo">C</div>
+                            <div class="auth-title">Create Account</div>
+                            <div class="auth-subtitle">Join CouturApp today</div>
+                        </div>
+                        <div class="auth-content">
+                            <div class="social-buttons">
+                                <div class="social-button google">
+                                    <div class="social-icon">G</div>
+                                    <span>Sign up with Google</span>
+                                </div>
+                                <div class="social-button facebook">
+                                    <div class="social-icon">f</div>
+                                    <span>Sign up with Facebook</span>
+                                </div>
+                            </div>
+
+                            <div class="divider">
+                                <span>OR</span>
+                            </div>
+
+                            <div class="input-group">
+                                <label>Full Name</label>
+                                <input type="text" placeholder="Enter your full name">
+                            </div>
+
+                            <div class="input-group">
+                                <label>Workshop Name</label>
+                                <input type="text" placeholder="Enter workshop name">
+                            </div>
+
+                            <div class="input-group">
+                                <label>Email</label>
+                                <input type="email" placeholder="Enter your email">
+                            </div>
+
+                            <div class="input-group">
+                                <label>Password</label>
+                                <input type="password" placeholder="Create a password">
+                            </div>
+
+                            <div class="input-group">
+                                <label>Confirm Password</label>
+                                <input type="password" placeholder="Confirm your password">
+                            </div>
+
+                            <div class="checkbox-group">
+                                <input type="checkbox">
+                                <span>I agree to the Terms & Conditions</span>
+                            </div>
+
+                            <div class="auth-button">Create Account</div>
+
+                            <div class="auth-footer">
+                                Already have an account? <a href="#">Login</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Screen -->
+            <div class="screen-card" data-screen="dashboard">
+                <div class="screen-title">1. Dashboard</div>
+                <div class="phone-frame">
+                    <div class="wireframe">
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <span>■■■</span>
+                        </div>
+                        <div class="app-header">
+                            <div class="app-title">CouturApp</div>
+                            <div class="icon-button">⚙</div>
+                        </div>
+                        <div class="content">
+                            <div class="section-title">Today's Overview</div>
+                            <div class="stats-grid">
+                                <div class="stat-box">
+                                    <div class="stat-value">12</div>
+                                    <div class="stat-label">Ongoing Orders</div>
+                                </div>
+                                <div class="stat-box">
+                                    <div class="stat-value">3</div>
+                                    <div class="stat-label">Urgent (D-2)</div>
+                                </div>
+                            </div>
+
+                            <div class="section-title">Urgent Orders</div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="card-title">Order #1245</div>
+                                    <div class="badge urgent">D-1</div>
+                                </div>
+                                <div class="card-detail">Customer: Fatima Diallo</div>
+                                <div class="card-detail">Model: Boubou</div>
+                                <div class="card-detail">Tailor: Mamadou</div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="card-title">Order #1243</div>
+                                    <div class="badge urgent">D-2</div>
+                                </div>
+                                <div class="card-detail">Customer: Aissata Sow</div>
+                                <div class="card-detail">Model: Dress</div>
+                                <div class="card-detail">Tailor: Ibrahim</div>
+                            </div>
+
+                            <div class="section-title">Daily Revenue</div>
+                            <div class="stat-box">
+                                <div class="stat-value">$450</div>
+                                <div class="stat-label">Today's Total</div>
+                            </div>
+                        </div>
+                        <div class="bottom-nav">
+                            <div class="nav-item active">
+                                <div class="nav-icon"></div>
+                                <span>Dashboard</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Orders</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Customers</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Tailors</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Stats</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Orders List Screen -->
+            <div class="screen-card" data-screen="orders">
+                <div class="screen-title">2. Orders List</div>
+                <div class="phone-frame">
+                    <div class="wireframe">
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <span>■■■</span>
+                        </div>
+                        <div class="app-header">
+                            <div class="icon-button">←</div>
+                            <div class="app-title">Orders</div>
+                            <div class="icon-button">🔍</div>
+                        </div>
+                        <div class="content">
+                            <div class="tab-bar">
+                                <div class="tab active">All</div>
+                                <div class="tab">In Progress</div>
+                                <div class="tab">Completed</div>
+                                <div class="tab">Delivered</div>
+                            </div>
+
+                            <div class="list-item">
+                                <div class="list-item-content">
+                                    <div class="list-item-title">Order #1245 - Fatima Diallo</div>
+                                    <div class="list-item-subtitle">Boubou • Due: Jan 31</div>
+                                </div>
+                                <div class="badge urgent">D-1</div>
+                            </div>
+
+                            <div class="list-item">
+                                <div class="list-item-content">
+                                    <div class="list-item-title">Order #1244 - Moussa Traoré</div>
+                                    <div class="list-item-subtitle">Suit • Due: Feb 2</div>
+                                </div>
+                                <div class="badge in-progress">D-4</div>
+                            </div>
+
+                            <div class="list-item">
+                                <div class="list-item-content">
+                                    <div class="list-item-title">Order #1243 - Aissata Sow</div>
+                                    <div class="list-item-subtitle">Dress • Due: Jan 30</div>
+                                </div>
+                                <div class="badge urgent">D-2</div>
+                            </div>
+
+                            <div class="list-item">
+                                <div class="list-item-content">
+                                    <div class="list-item-title">Order #1242 - Amadou Bah</div>
+                                    <div class="list-item-subtitle">Caftan • Due: Feb 5</div>
+                                </div>
+                                <div class="badge in-progress">D-7</div>
+                            </div>
+
+                            <div class="list-item">
+                                <div class="list-item-content">
+                                    <div class="list-item-title">Order #1241 - Mariam Kane</div>
+                                    <div class="list-item-subtitle">Traditional Wear • Delivered</div>
+                                </div>
+                                <div class="badge completed">Done</div>
+                            </div>
+                        </div>
+                        <div class="fab">+</div>
+                        <div class="bottom-nav">
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Dashboard</span>
+                            </div>
+                            <div class="nav-item active">
+                                <div class="nav-icon"></div>
+                                <span>Orders</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Customers</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Tailors</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Stats</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Detail Screen -->
+            <div class="screen-card" data-screen="order-detail">
+                <div class="screen-title">3. Order Detail</div>
+                <div class="phone-frame">
+                    <div class="wireframe">
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <span>■■■</span>
+                        </div>
+                        <div class="app-header">
+                            <div class="icon-button">←</div>
+                            <div class="app-title">Order #1245</div>
+                            <div class="icon-button">⋮</div>
+                        </div>
+                        <div class="content">
+                            <div class="badge urgent" style="display: inline-block; margin-bottom: 12px;">URGENT - Due in 1 day</div>
+                            
+                            <div class="section-title">Customer Information</div>
+                            <div class="card">
+                                <div class="card-title">Fatima Diallo</div>
+                                <div class="card-detail">📞 +227 90 12 34 56</div>
+                                <div class="card-detail">Previous orders: 5</div>
+                            </div>
+
+                            <div class="section-title">Order Details</div>
+                            <div class="card">
+                                <div class="card-detail"><strong>Model:</strong> Boubou</div>
+                                <div class="card-detail"><strong>Price:</strong> $120</div>
+                                <div class="card-detail"><strong>Delivery:</strong> January 31, 2026</div>
+                                <div class="card-detail"><strong>Status:</strong> In Progress</div>
+                            </div>
+
+                            <div class="section-title">Assigned Tailors</div>
+                            <div class="list-item">
+                                <div class="list-item-content">
+                                    <div class="list-item-title">Mamadou Diop</div>
+                                    <div class="list-item-subtitle">Master Tailor</div>
+                                </div>
+                                <div class="icon-button">→</div>
+                            </div>
+
+                            <div class="section-title">Measurements</div>
+                            <div class="measurement-row">
+                                <div class="measurement-item">
+                                    <div class="measurement-label">Height</div>
+                                    <div class="measurement-value">165 cm</div>
+                                </div>
+                                <div class="measurement-item">
+                                    <div class="measurement-label">Chest</div>
+                                    <div class="measurement-value">92 cm</div>
+                                </div>
+                                <div class="measurement-item">
+                                    <div class="measurement-label">Arm Length</div>
+                                    <div class="measurement-value">58 cm</div>
+                                </div>
+                                <div class="measurement-item">
+                                    <div class="measurement-label">Length</div>
+                                    <div class="measurement-value">145 cm</div>
+                                </div>
+                            </div>
+
+                            <div class="button">Mark as Completed</div>
+                            <div class="button secondary">Edit Order</div>
+                        </div>
+                        <div class="bottom-nav">
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Dashboard</span>
+                            </div>
+                            <div class="nav-item active">
+                                <div class="nav-icon"></div>
+                                <span>Orders</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Customers</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Tailors</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Stats</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Create Order Screen -->
+            <div class="screen-card" data-screen="create-order">
+                <div class="screen-title">4. Create Order (Step 1/3)</div>
+                <div class="phone-frame">
+                    <div class="wireframe">
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <span>■■■</span>
+                        </div>
+                        <div class="app-header">
+                            <div class="icon-button">×</div>
+                            <div class="app-title">New Order</div>
+                            <div style="width: 32px;"></div>
+                        </div>
+                        <div class="content">
+                            <div class="section-title">Step 1: Customer Selection</div>
+                            
+                            <div class="input-field">
+                                <label class="input-label">Select Customer</label>
+                                <div class="input-box"></div>
+                            </div>
+
+                            <div class="button secondary">+ Add New Customer</div>
+
+                            <div class="section-title" style="margin-top: 20px;">Recent Customers</div>
+                            
+                            <div class="list-item">
+                                <div class="list-item-content">
+                                    <div class="list-item-title">Fatima Diallo</div>
+                                    <div class="list-item-subtitle">+227 90 12 34 56</div>
+                                </div>
+                                <div class="icon-button">→</div>
+                            </div>
+
+                            <div class="list-item">
+                                <div class="list-item-content">
+                                    <div class="list-item-title">Moussa Traoré</div>
+                                    <div class="list-item-subtitle">+227 91 23 45 67</div>
+                                </div>
+                                <div class="icon-button">→</div>
+                            </div>
+
+                            <div class="list-item">
+                                <div class="list-item-content">
+                                    <div class="list-item-title">Aissata Sow</div>
+                                    <div class="list-item-subtitle">+227 92 34 56 78</div>
+                                </div>
+                                <div class="icon-button">→</div>
+                            </div>
+
+                            <div class="button" style="margin-top: 20px;">Continue</div>
+                        </div>
+                        <div class="bottom-nav">
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Dashboard</span>
+                            </div>
+                            <div class="nav-item active">
+                                <div class="nav-icon"></div>
+                                <span>Orders</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Customers</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Tailors</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Stats</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Customers List Screen -->
+            <div class="screen-card" data-screen="customers">
+                <div class="screen-title">5. Customers List</div>
+                <div class="phone-frame">
+                    <div class="wireframe">
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <span>■■■</span>
+                        </div>
+                        <div class="app-header">
+                            <div style="width: 32px;"></div>
+                            <div class="app-title">Customers</div>
+                            <div class="icon-button">🔍</div>
+                        </div>
+                        <div class="content">
+                            <div class="input-field">
+                                <div class="input-box" style="display: flex; align-items: center; padding: 0 10px; color: #999;">
+                                    Search customers...
+                                </div>
+                            </div>
+
+                            <div class="list-item">
+                                <div class="list-item-content">
+                                    <div class="list-item-title">Fatima Diallo</div>
+                                    <div class="list-item-subtitle">+227 90 12 34 56 • 5 orders</div>
+                                </div>
+                                <div class="icon-button">→</div>
+                            </div>
+
+                            <div class="list-item">
+                                <div class="list-item-content">
+                                    <div class="list-item-title">Moussa Traoré</div>
+                                    <div class="list-item-subtitle">+227 91 23 45 67 • 3 orders</div>
+                                </div>
+                                <div class="icon-button">→</div>
+                            </div>
+
+                            <div class="list-item">
+                                <div class="list-item-content">
+                                    <div class="list-item-title">Aissata Sow</div>
+                                    <div class="list-item-subtitle">+227 92 34 56 78 • 8 orders</div>
+                                </div>
+                                <div class="icon-button">→</div>
+                            </div>
+
+                            <div class="list-item">
+                                <div class="list-item-content">
+                                    <div class="list-item-title">Amadou Bah</div>
+                                    <div class="list-item-subtitle">+227 93 45 67 89 • 2 orders</div>
+                                </div>
+                                <div class="icon-button">→</div>
+                            </div>
+
+                            <div class="list-item">
+                                <div class="list-item-content">
+                                    <div class="list-item-title">Mariam Kane</div>
+                                    <div class="list-item-subtitle">+227 94 56 78 90 • 12 orders</div>
+                                </div>
+                                <div class="icon-button">→</div>
+                            </div>
+                        </div>
+                        <div class="fab">+</div>
+                        <div class="bottom-nav">
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Dashboard</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Orders</span>
+                            </div>
+                            <div class="nav-item active">
+                                <div class="nav-icon"></div>
+                                <span>Customers</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Tailors</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Stats</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Customer Profile Screen -->
+            <div class="screen-card" data-screen="customer-profile">
+                <div class="screen-title">6. Customer Profile</div>
+                <div class="phone-frame">
+                    <div class="wireframe">
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <span>■■■</span>
+                        </div>
+                        <div class="app-header">
+                            <div class="icon-button">←</div>
+                            <div class="app-title">Customer Profile</div>
+                            <div class="icon-button">✎</div>
+                        </div>
+                        <div class="content">
+                            <div class="profile-header">
+                                <div class="avatar"></div>
+                                <div class="profile-info">
+                                    <div class="profile-name">Fatima Diallo</div>
+                                    <div class="profile-detail">📞 +227 90 12 34 56</div>
+                                    <div class="profile-detail">Customer since: Jan 2024</div>
+                                </div>
+                            </div>
+
+                            <div class="stats-grid">
+                                <div class="stat-box">
+                                    <div class="stat-value">5</div>
+                                    <div class="stat-label">Total Orders</div>
+                                </div>
+                                <div class="stat-box">
+                                    <div class="stat-value">$600</div>
+                                    <div class="stat-label">Total Spent</div>
+                                </div>
+                            </div>
+
+                            <div class="section-title">Measurement Profiles</div>
+                            <div class="list-item">
+                                <div class="list-item-content">
+                                    <div class="list-item-title">Boubou Profile</div>
+                                    <div class="list-item-subtitle">Last updated: Jan 15, 2026</div>
+                                </div>
+                                <div class="icon-button">→</div>
+                            </div>
+
+                            <div class="list-item">
+                                <div class="list-item-content">
+                                    <div class="list-item-title">Dress Profile</div>
+                                    <div class="list-item-subtitle">Last updated: Dec 20, 2025</div>
+                                </div>
+                                <div class="icon-button">→</div>
+                            </div>
+
+                            <div class="section-title">Recent Orders</div>
+                            <div class="list-item">
+                                <div class="list-item-content">
+                                    <div class="list-item-title">Order #1245 - Boubou</div>
+                                    <div class="list-item-subtitle">In Progress • Due: Jan 31</div>
+                                </div>
+                                <div class="badge urgent">D-1</div>
+                            </div>
+
+                            <div class="list-item">
+                                <div class="list-item-content">
+                                    <div class="list-item-title">Order #1201 - Dress</div>
+                                    <div class="list-item-subtitle">Delivered • Jan 10</div>
+                                </div>
+                                <div class="badge completed">Done</div>
+                            </div>
+
+                            <div class="button">Create New Order</div>
+                        </div>
+                        <div class="bottom-nav">
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Dashboard</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Orders</span>
+                            </div>
+                            <div class="nav-item active">
+                                <div class="nav-icon"></div>
+                                <span>Customers</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Tailors</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Stats</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Measurements Screen -->
+            <div class="screen-card" data-screen="measurements">
+                <div class="screen-title">7. Measurement Profile</div>
+                <div class="phone-frame">
+                    <div class="wireframe">
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <span>■■■</span>
+                        </div>
+                        <div class="app-header">
+                            <div class="icon-button">←</div>
+                            <div class="app-title">Boubou Profile</div>
+                            <div class="icon-button">✎</div>
+                        </div>
+                        <div class="content">
+                            <div class="card">
+                                <div class="card-title">Fatima Diallo</div>
+                                <div class="card-detail">Profile: Boubou</div>
+                                <div class="card-detail">Last updated: Jan 15, 2026</div>
+                            </div>
+
+                            <div class="section-title">Standard Measurements</div>
+                            <div class="measurement-row">
+                                <div class="measurement-item">
+                                    <div class="measurement-label">Height</div>
+                                    <div class="measurement-value">165 cm</div>
+                                </div>
+                                <div class="measurement-item">
+                                    <div class="measurement-label">Chest/Bust</div>
+                                    <div class="measurement-value">92 cm</div>
+                                </div>
+                            </div>
+                            <div class="measurement-row">
+                                <div class="measurement-item">
+                                    <div class="measurement-label">Waist</div>
+                                    <div class="measurement-value">78 cm</div>
+                                </div>
+                                <div class="measurement-item">
+                                    <div class="measurement-label">Hip</div>
+                                    <div class="measurement-value">98 cm</div>
+                                </div>
+                            </div>
+                            <div class="measurement-row">
+                                <div class="measurement-item">
+                                    <div class="measurement-label">Arm Length</div>
+                                    <div class="measurement-value">58 cm</div>
+                                </div>
+                                <div class="measurement-item">
+                                    <div class="measurement-label">Shoulder Width</div>
+                                    <div class="measurement-value">42 cm</div>
+                                </div>
+                            </div>
+                            <div class="measurement-row">
+                                <div class="measurement-item">
+                                    <div class="measurement-label">Trouser Length</div>
+                                    <div class="measurement-value">102 cm</div>
+                                </div>
+                                <div class="measurement-item">
+                                    <div class="measurement-label">Garment Length</div>
+                                    <div class="measurement-value">145 cm</div>
+                                </div>
+                            </div>
+
+                            <div class="section-title">Custom Fields</div>
+                            <div class="measurement-row">
+                                <div class="measurement-item">
+                                    <div class="measurement-label">Neck</div>
+                                    <div class="measurement-value">38 cm</div>
+                                </div>
+                                <div class="measurement-item">
+                                    <div class="measurement-label">Sleeve Width</div>
+                                    <div class="measurement-value">18 cm</div>
+                                </div>
+                            </div>
+
+                            <div class="button">Duplicate Profile</div>
+                            <div class="button secondary">Edit Measurements</div>
+                        </div>
+                        <div class="bottom-nav">
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Dashboard</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Orders</span>
+                            </div>
+                            <div class="nav-item active">
+                                <div class="nav-icon"></div>
+                                <span>Customers</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Tailors</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Stats</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tailors Screen -->
+            <div class="screen-card" data-screen="tailors">
+                <div class="screen-title">8. Tailors List</div>
+                <div class="phone-frame">
+                    <div class="wireframe">
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <span>■■■</span>
+                        </div>
+                        <div class="app-header">
+                            <div style="width: 32px;"></div>
+                            <div class="app-title">Tailors</div>
+                            <div class="icon-button">+</div>
+                        </div>
+                        <div class="content">
+                            <div class="list-item">
+                                <div class="avatar" style="width: 48px; height: 48px;"></div>
+                                <div class="list-item-content" style="margin-left: 12px;">
+                                    <div class="list-item-title">Mamadou Diop</div>
+                                    <div class="list-item-subtitle">5 active orders • 45 completed</div>
+                                </div>
+                                <div class="icon-button">→</div>
+                            </div>
+
+                            <div class="list-item">
+                                <div class="avatar" style="width: 48px; height: 48px;"></div>
+                                <div class="list-item-content" style="margin-left: 12px;">
+                                    <div class="list-item-title">Ibrahim Koné</div>
+                                    <div class="list-item-subtitle">3 active orders • 38 completed</div>
+                                </div>
+                                <div class="icon-button">→</div>
+                            </div>
+
+                            <div class="list-item">
+                                <div class="avatar" style="width: 48px; height: 48px;"></div>
+                                <div class="list-item-content" style="margin-left: 12px;">
+                                    <div class="list-item-title">Ousmane Cissé</div>
+                                    <div class="list-item-subtitle">7 active orders • 62 completed</div>
+                                </div>
+                                <div class="icon-button">→</div>
+                            </div>
+
+                            <div class="list-item">
+                                <div class="avatar" style="width: 48px; height: 48px;"></div>
+                                <div class="list-item-content" style="margin-left: 12px;">
+                                    <div class="list-item-title">Abdoulaye Sow</div>
+                                    <div class="list-item-subtitle">2 active orders • 28 completed</div>
+                                </div>
+                                <div class="icon-button">→</div>
+                            </div>
+
+                            <div class="section-title">Performance Overview</div>
+                            <div class="chart-placeholder">
+                                [Bar Chart: Orders per Tailor]
+                            </div>
+                        </div>
+                        <div class="bottom-nav">
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Dashboard</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Orders</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Customers</span>
+                            </div>
+                            <div class="nav-item active">
+                                <div class="nav-icon"></div>
+                                <span>Tailors</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Stats</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statistics Screen -->
+            <div class="screen-card" data-screen="statistics">
+                <div class="screen-title">9. Statistics & Revenue</div>
+                <div class="phone-frame">
+                    <div class="wireframe">
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <span>■■■</span>
+                        </div>
+                        <div class="app-header">
+                            <div style="width: 32px;"></div>
+                            <div class="app-title">Statistics</div>
+                            <div class="icon-button">📅</div>
+                        </div>
+                        <div class="content">
+                            <div class="tab-bar">
+                                <div class="tab active">Day</div>
+                                <div class="tab">Week</div>
+                                <div class="tab">Month</div>
+                                <div class="tab">Year</div>
+                            </div>
+
+                            <div class="section-title">Revenue - January 29, 2026</div>
+                            <div class="stat-box">
+                                <div class="stat-value">$450</div>
+                                <div class="stat-label">Today's Revenue</div>
+                            </div>
+
+                            <div class="stats-grid">
+                                <div class="stat-box">
+                                    <div class="stat-value">3</div>
+                                    <div class="stat-label">Orders Completed</div>
+                                </div>
+                                <div class="stat-box">
+                                    <div class="stat-value">$150</div>
+                                    <div class="stat-label">Avg Order Value</div>
+                                </div>
+                            </div>
+
+                            <div class="section-title">Revenue Trend</div>
+                            <div class="chart-placeholder">
+                                [Line Chart: Revenue Over Time]
+                            </div>
+
+                            <div class="section-title">Order Distribution</div>
+                            <div class="chart-placeholder" style="height: 150px;">
+                                [Pie Chart: Orders by Status]
+                            </div>
+
+                            <div class="section-title">Monthly Summary</div>
+                            <div class="card">
+                                <div class="card-detail">Total Revenue: <strong>$12,450</strong></div>
+                                <div class="card-detail">Orders Completed: <strong>89</strong></div>
+                                <div class="card-detail">Active Customers: <strong>45</strong></div>
+                                <div class="card-detail">Average Order Value: <strong>$140</strong></div>
+                            </div>
+                        </div>
+                        <div class="bottom-nav">
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Dashboard</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Orders</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Customers</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Tailors</span>
+                            </div>
+                            <div class="nav-item active">
+                                <div class="nav-icon"></div>
+                                <span>Stats</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showScreen(screenName) {
+            const cards = document.querySelectorAll('.screen-card');
+            const buttons = document.querySelectorAll('.screen-btn');
+            
+            // Remove active class from all buttons
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            // Hide all cards
+            cards.forEach(card => {
+                card.style.display = 'none';
+            });
+            
+            // Show selected screen
+            const selectedCard = document.querySelector(`[data-screen="${screenName}"]`);
+            if (selectedCard) {
+                selectedCard.style.display = 'block';
+            }
+            
+            // Highlight clicked button
+            event.target.classList.add('active');
+        }
+
+        function showAllScreens() {
+            const cards = document.querySelectorAll('.screen-card');
+            const buttons = document.querySelectorAll('.screen-btn');
+            
+            // Remove active class from all buttons
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active to "All Screens" button
+            buttons[0].classList.add('active');
+            
+            // Show all cards
+            cards.forEach(card => {
+                card.style.display = 'block';
+            });
+        }
+    </script>
+</body>
+</html>
