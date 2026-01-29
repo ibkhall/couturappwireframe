@@ -682,6 +682,118 @@
             border: 2px solid #ddd;
             border-radius: 3px;
         }
+
+        /* Onboarding Screens Styles */
+        .onboarding-screen {
+            min-height: 600px;
+            display: flex;
+            flex-direction: column;
+            background: white;
+        }
+
+        .onboarding-content {
+            flex: 1;
+            padding: 40px 20px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .onboarding-illustration {
+            width: 280px;
+            height: 280px;
+            border: 3px solid #333;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 80px;
+            font-weight: bold;
+        }
+
+        .onboarding-title {
+            font-size: 26px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 12px;
+        }
+
+        .onboarding-description {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.6;
+            max-width: 300px;
+            margin-bottom: 30px;
+        }
+
+        .onboarding-footer {
+            padding: 20px;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .pagination-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ddd;
+            border: 2px solid #333;
+        }
+
+        .dot.active {
+            background: #667eea;
+            width: 24px;
+            border-radius: 5px;
+        }
+
+        .onboarding-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .onboarding-button {
+            flex: 1;
+            padding: 14px;
+            border: 2px solid #333;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .onboarding-button.primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .onboarding-button.secondary {
+            background: white;
+            color: #666;
+        }
+
+        .skip-button {
+            text-align: center;
+            margin-top: 12px;
+            font-size: 13px;
+            color: #999;
+            cursor: pointer;
+        }
+
+        .skip-button a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
     </style>
 </head>
 <body>
@@ -693,6 +805,9 @@
 
         <div class="screen-selector">
             <button class="screen-btn active" onclick="showAllScreens()">All Screens</button>
+            <button class="screen-btn" onclick="showScreen('onboarding-1')">Onboarding 1</button>
+            <button class="screen-btn" onclick="showScreen('onboarding-2')">Onboarding 2</button>
+            <button class="screen-btn" onclick="showScreen('onboarding-3')">Onboarding 3</button>
             <button class="screen-btn" onclick="showScreen('login')">Login</button>
             <button class="screen-btn" onclick="showScreen('register')">Register</button>
             <button class="screen-btn" onclick="showScreen('dashboard')">Dashboard</button>
@@ -707,6 +822,99 @@
         </div>
 
         <div class="screens-grid" id="screensGrid">
+            <!-- Onboarding Screen 1 -->
+            <div class="screen-card" data-screen="onboarding-1">
+                <div class="screen-title">Onboarding 1/3 - Welcome</div>
+                <div class="phone-frame">
+                    <div class="wireframe onboarding-screen">
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <span>■■■</span>
+                        </div>
+                        <div class="onboarding-content">
+                            <div class="onboarding-illustration">📱</div>
+                            <div class="onboarding-title">Welcome to CouturApp</div>
+                            <div class="onboarding-description">
+                                Manage your tailoring workshop efficiently. Track orders, customers, and team performance all in one place.
+                            </div>
+                        </div>
+                        <div class="onboarding-footer">
+                            <div class="pagination-dots">
+                                <div class="dot active"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                            </div>
+                            <div class="onboarding-buttons">
+                                <div class="onboarding-button secondary">Skip</div>
+                                <div class="onboarding-button primary">Next</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Onboarding Screen 2 -->
+            <div class="screen-card" data-screen="onboarding-2">
+                <div class="screen-title">Onboarding 2/3 - Features</div>
+                <div class="phone-frame">
+                    <div class="wireframe onboarding-screen">
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <span>■■■</span>
+                        </div>
+                        <div class="onboarding-content">
+                            <div class="onboarding-illustration">📊</div>
+                            <div class="onboarding-title">Never Miss a Deadline</div>
+                            <div class="onboarding-description">
+                                Get instant alerts for urgent orders. Track delivery dates and ensure every customer gets their order on time.
+                            </div>
+                        </div>
+                        <div class="onboarding-footer">
+                            <div class="pagination-dots">
+                                <div class="dot"></div>
+                                <div class="dot active"></div>
+                                <div class="dot"></div>
+                            </div>
+                            <div class="onboarding-buttons">
+                                <div class="onboarding-button secondary">Back</div>
+                                <div class="onboarding-button primary">Next</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Onboarding Screen 3 -->
+            <div class="screen-card" data-screen="onboarding-3">
+                <div class="screen-title">Onboarding 3/3 - Get Started</div>
+                <div class="phone-frame">
+                    <div class="wireframe onboarding-screen">
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <span>■■■</span>
+                        </div>
+                        <div class="onboarding-content">
+                            <div class="onboarding-illustration">✂️</div>
+                            <div class="onboarding-title">Track Every Detail</div>
+                            <div class="onboarding-description">
+                                Store customer measurements, monitor tailor productivity, and view revenue insights - all from your mobile device.
+                            </div>
+                        </div>
+                        <div class="onboarding-footer">
+                            <div class="pagination-dots">
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot active"></div>
+                            </div>
+                            <div class="onboarding-buttons">
+                                <div class="onboarding-button secondary">Back</div>
+                                <div class="onboarding-button primary">Get Started</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Login Screen -->
             <div class="screen-card" data-screen="login">
                 <div class="screen-title">Login Screen</div>
