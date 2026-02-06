@@ -40,6 +40,28 @@
             opacity: 0.9;
         }
 
+        .platform-toggle {
+            padding: 12px 30px;
+            background: rgba(255,255,255,0.2);
+            border: 2px solid white;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 0 5px;
+            transition: all 0.3s ease;
+        }
+
+        .platform-toggle:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .platform-toggle.active {
+            background: white;
+            color: #667eea;
+        }
+
         .screens-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -794,6 +816,600 @@
             text-decoration: none;
             font-weight: 600;
         }
+
+        /* Desktop Wireframe Styles */
+        .desktop-frame {
+            background: #e0e0e0;
+            padding: 20px;
+            border-radius: 8px;
+            min-height: 700px;
+        }
+
+        .desktop-wireframe {
+            background: white;
+            border: 3px solid #333;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .desktop-topbar {
+            height: 40px;
+            background: #f5f5f5;
+            border-bottom: 3px solid #333;
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            gap: 8px;
+        }
+
+        .window-control {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 2px solid #333;
+        }
+
+        .window-control.close { background: #ff5f56; }
+        .window-control.minimize { background: #ffbd2e; }
+        .window-control.maximize { background: #27c93f; }
+
+        .desktop-layout {
+            display: flex;
+            height: calc(100% - 40px);
+        }
+
+        .desktop-sidebar {
+            width: 250px;
+            background: #2c3e50;
+            border-right: 3px solid #333;
+            color: white;
+            padding: 20px 0;
+        }
+
+        .sidebar-logo {
+            padding: 0 20px 20px;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+            margin-bottom: 20px;
+        }
+
+        .sidebar-logo-text {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .sidebar-menu-item {
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            transition: background 0.2s;
+            border-left: 4px solid transparent;
+        }
+
+        .sidebar-menu-item:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .sidebar-menu-item.active {
+            background: rgba(102, 126, 234, 0.3);
+            border-left-color: #667eea;
+        }
+
+        .menu-icon {
+            width: 20px;
+            height: 20px;
+            border: 2px solid currentColor;
+            border-radius: 4px;
+        }
+
+        .desktop-main {
+            flex: 1;
+            background: #f8f9fa;
+            overflow-y: auto;
+        }
+
+        .desktop-header {
+            background: white;
+            border-bottom: 3px solid #e0e0e0;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .desktop-page-title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .desktop-header-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .desktop-button {
+            padding: 10px 20px;
+            border: 2px solid #333;
+            border-radius: 6px;
+            background: white;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .desktop-button.primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .desktop-content {
+            padding: 30px;
+        }
+
+        .desktop-grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .desktop-grid.two-col {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .desktop-grid.three-col {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .desktop-grid.four-col {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .desktop-card {
+            background: white;
+            border: 3px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .desktop-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .desktop-card-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .desktop-stat-card {
+            background: white;
+            border: 3px solid #333;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .desktop-stat-value {
+            font-size: 36px;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 8px;
+        }
+
+        .desktop-stat-label {
+            font-size: 14px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .desktop-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .desktop-table th {
+            background: #f5f5f5;
+            border: 2px solid #333;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+            font-size: 13px;
+            text-transform: uppercase;
+        }
+
+        .desktop-table td {
+            border: 2px solid #e0e0e0;
+            padding: 12px;
+            font-size: 14px;
+        }
+
+        .desktop-table tr:hover {
+            background: #f9f9f9;
+        }
+
+        .desktop-form {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .desktop-form.single-col {
+            grid-template-columns: 1fr;
+        }
+
+        .desktop-input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .desktop-input-group label {
+            font-weight: 600;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .desktop-input-group input,
+        .desktop-input-group select {
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .desktop-sidebar-section {
+            padding: 0 20px;
+            margin-bottom: 30px;
+        }
+
+        .sidebar-section-title {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.6;
+            margin-bottom: 10px;
+        }
+
+        .desktop-auth {
+            display: flex;
+            height: 600px;
+        }
+
+        .desktop-auth-left {
+            flex: 1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 60px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .desktop-auth-logo {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border: 3px solid white;
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .desktop-auth-title {
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .desktop-auth-subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .desktop-auth-right {
+            flex: 1;
+            background: white;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .desktop-onboarding {
+            display: flex;
+            flex-direction: column;
+            height: 600px;
+        }
+
+        .desktop-onboarding-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 60px;
+            text-align: center;
+        }
+
+        .desktop-onboarding-illustration {
+            width: 400px;
+            height: 300px;
+            border: 4px solid #333;
+            border-radius: 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 120px;
+            margin-bottom: 40px;
+        }
+
+        .desktop-onboarding-title {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .desktop-onboarding-description {
+            font-size: 18px;
+            color: #666;
+            max-width: 500px;
+            line-height: 1.6;
+        }
+
+        .desktop-onboarding-footer {
+            padding: 40px;
+            border-top: 3px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Model Screens Styles */
+        .model-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .model-card {
+            border: 2px solid #333;
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
+            cursor: pointer;
+        }
+
+        .model-photo {
+            width: 100%;
+            height: 140px;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            border-bottom: 2px solid #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: #999;
+        }
+
+        .model-info {
+            padding: 10px;
+        }
+
+        .model-name {
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .model-stats {
+            font-size: 11px;
+            color: #666;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .photo-item {
+            position: relative;
+            width: 100%;
+            padding-bottom: 100%;
+            border: 2px solid #333;
+            border-radius: 6px;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            overflow: hidden;
+        }
+
+        .photo-item-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: #999;
+        }
+
+        .photo-item.primary {
+            border-color: #667eea;
+            background: linear-gradient(135deg, #e8eef9 0%, #d0daf5 100%);
+        }
+
+        .photo-item.primary::after {
+            content: '⭐';
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            font-size: 16px;
+        }
+
+        .photo-item.add-photo {
+            border-style: dashed;
+            border-color: #ddd;
+            background: #f9f9f9;
+            cursor: pointer;
+        }
+
+        .photo-delete-btn {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: rgba(255, 68, 68, 0.9);
+            border: 2px solid #333;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        /* Navigation Drawer Styles */
+        .nav-drawer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 280px;
+            height: 100%;
+            background: white;
+            border-right: 3px solid #333;
+            z-index: 100;
+            box-shadow: 4px 0 12px rgba(0,0,0,0.15);
+        }
+
+        .drawer-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px 20px;
+            color: white;
+            border-bottom: 3px solid #333;
+        }
+
+        .drawer-logo {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .drawer-subtitle {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        .drawer-content {
+            padding: 20px 0;
+        }
+
+        .drawer-section-title {
+            padding: 0 20px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #999;
+            margin-bottom: 10px;
+            margin-top: 20px;
+        }
+
+        .drawer-section-title:first-child {
+            margin-top: 0;
+        }
+
+        .drawer-item {
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            transition: background 0.2s;
+            border-left: 4px solid transparent;
+        }
+
+        .drawer-item:hover {
+            background: #f5f5f5;
+        }
+
+        .drawer-item.active {
+            background: rgba(102, 126, 234, 0.1);
+            border-left-color: #667eea;
+        }
+
+        .drawer-icon {
+            width: 24px;
+            height: 24px;
+            border: 2px solid #333;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .drawer-item-content {
+            flex: 1;
+        }
+
+        .drawer-item-title {
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 2px;
+        }
+
+        .drawer-item-subtitle {
+            font-size: 11px;
+            color: #666;
+        }
+
+        .drawer-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 99;
+        }
+
+        .hamburger-icon {
+            width: 32px;
+            height: 32px;
+            border: 2px solid #fff;
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            cursor: pointer;
+        }
+
+        .hamburger-line {
+            width: 18px;
+            height: 2px;
+            background: white;
+        }
     </style>
 </head>
 <body>
@@ -813,10 +1429,21 @@
             <button class="screen-btn" onclick="showScreen('dashboard')">Dashboard</button>
             <button class="screen-btn" onclick="showScreen('orders')">Orders</button>
             <button class="screen-btn" onclick="showScreen('order-detail')">Order Detail</button>
-            <button class="screen-btn" onclick="showScreen('create-order')">Create Order</button>
+            <button class="screen-btn" onclick="showScreen('create-order')">Create Order 1/3</button>
+            <button class="screen-btn" onclick="showScreen('create-order-step-2')">Create Order 2/3</button>
+            <button class="screen-btn" onclick="showScreen('create-order-step-3')">Create Order 3/3</button>
+            <button class="screen-btn" onclick="showScreen('order-confirmation')">Order Confirmation</button>
             <button class="screen-btn" onclick="showScreen('customers')">Customers</button>
+            <button class="screen-btn" onclick="showScreen('add-customer')">Add Customer</button>
             <button class="screen-btn" onclick="showScreen('customer-profile')">Customer Profile</button>
             <button class="screen-btn" onclick="showScreen('measurements')">Measurements</button>
+            <button class="screen-btn" onclick="showScreen('add-measurement')">Add Measurement</button>
+            <button class="screen-btn" onclick="showScreen('edit-measurement')">Edit Measurement</button>
+            <button class="screen-btn" onclick="showScreen('settings')">Navigation Drawer</button>
+            <button class="screen-btn" onclick="showScreen('measurement-templates')">Measurement Templates</button>
+            <button class="screen-btn" onclick="showScreen('models')">Models</button>
+            <button class="screen-btn" onclick="showScreen('model-detail')">Model Detail</button>
+            <button class="screen-btn" onclick="showScreen('add-model')">Add Model</button>
             <button class="screen-btn" onclick="showScreen('tailors')">Tailors</button>
             <button class="screen-btn" onclick="showScreen('statistics')">Statistics</button>
         </div>
@@ -1375,6 +2002,261 @@
                 </div>
             </div>
 
+            <!-- Create Order Step 2 -->
+            <div class="screen-card" data-screen="create-order-step-2">
+                <div class="screen-title">5. Create Order (Step 2/3)</div>
+                <div class="phone-frame">
+                    <div class="wireframe">
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <span>■■■</span>
+                        </div>
+                        <div class="app-header">
+                            <div class="icon-button">←</div>
+                            <div class="app-title">New Order (2/3)</div>
+                            <div style="width: 32px;"></div>
+                        </div>
+                        <div class="content">
+                            <div class="section-title">Step 2: Order Details</div>
+                            
+                            <div class="card" style="background: #f9f9f9; margin-bottom: 15px;">
+                                <div style="font-size: 12px; color: #666; margin-bottom: 4px;">Selected Customer</div>
+                                <div style="font-weight: bold;">Fatima Diallo</div>
+                                <div style="font-size: 12px; color: #666;">+227 90 12 34 56</div>
+                            </div>
+
+                            <div class="input-field">
+                                <label class="input-label">Model Type *</label>
+                                <div class="input-box" style="display: flex; align-items: center; padding: 0 10px; color: #333;">
+                                    Boubou Traditionnel
+                                </div>
+                            </div>
+
+                            <div class="card" style="background: #f9f9f9; margin-bottom: 12px;">
+                                <div style="display: flex; gap: 12px; align-items: center;">
+                                    <div style="width: 70px; height: 70px; border: 2px solid #333; border-radius: 6px; background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%); display: flex; align-items: center; justify-content: center; font-size: 30px; flex-shrink: 0;">👔</div>
+                                    <div style="flex: 1;">
+                                        <div style="font-weight: bold; margin-bottom: 4px;">Boubou Traditionnel</div>
+                                        <div style="font-size: 11px; color: #666;">4 photos</div>
+                                    </div>
+                                    <div class="icon-button" style="width: 28px; height: 28px;">→</div>
+                                </div>
+                            </div>
+
+                            <div class="input-field">
+                                <label class="input-label">Measurement Profile *</label>
+                                <div class="input-box"></div>
+                                <div style="font-size: 11px; color: #999; margin-top: 4px;">Select from customer's profiles</div>
+                            </div>
+
+                            <div class="input-field">
+                                <label class="input-label">Appointment Date *</label>
+                                <div class="input-box"></div>
+                            </div>
+
+                            <div class="measurement-row">
+                                <div class="input-field" style="margin-bottom: 0;">
+                                    <label class="input-label">Price *</label>
+                                    <div class="input-box"></div>
+                                </div>
+                                <div class="input-field" style="margin-bottom: 0;">
+                                    <label class="input-label">Amount Paid</label>
+                                    <div class="input-box"></div>
+                                </div>
+                            </div>
+
+                            <div class="card" style="background: #f0f8ff; border-color: #667eea; margin-top: 8px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <div>
+                                        <div style="font-size: 11px; color: #666;">Remaining Balance</div>
+                                        <div style="font-size: 18px; font-weight: bold; color: #667eea;">$0</div>
+                                    </div>
+                                    <div style="font-size: 24px;">💰</div>
+                                </div>
+                            </div>
+
+                            <div class="button" style="margin-top: 20px;">Continue</div>
+                        </div>
+                        <div class="bottom-nav">
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Dashboard</span>
+                            </div>
+                            <div class="nav-item active">
+                                <div class="nav-icon"></div>
+                                <span>Orders</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Customers</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Tailors</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Stats</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Create Order Step 3 -->
+            <div class="screen-card" data-screen="create-order-step-3">
+                <div class="screen-title">6. Create Order (Step 3/3)</div>
+                <div class="phone-frame">
+                    <div class="wireframe">
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <span>■■■</span>
+                        </div>
+                        <div class="app-header">
+                            <div class="icon-button">←</div>
+                            <div class="app-title">New Order (3/3)</div>
+                            <div style="width: 32px;"></div>
+                        </div>
+                        <div class="content">
+                            <div class="section-title">Step 3: Assign Tailors</div>
+                            
+                            <div class="card" style="background: #f9f9f9; margin-bottom: 15px;">
+                                <div style="font-size: 12px; color: #666; margin-bottom: 4px;">Order Summary</div>
+                                <div style="font-weight: bold; margin-bottom: 4px;">Fatima Diallo - Boubou</div>
+                                <div style="font-size: 12px; color: #666;">Due: Feb 15, 2026</div>
+                                <div style="font-size: 12px; color: #666;">Price: $120 | Paid: $50</div>
+                            </div>
+
+                            <div class="input-field">
+                                <label class="input-label">Select Tailor(s) *</label>
+                                <div style="font-size: 11px; color: #999; margin-bottom: 8px;">Tap to select one or more tailors</div>
+                            </div>
+
+                            <div class="list-item" style="cursor: pointer;">
+                                <div style="width: 20px; height: 20px; border: 2px solid #ddd; border-radius: 4px; background: white;"></div>
+                                <div class="list-item-content" style="margin-left: 12px;">
+                                    <div class="list-item-title">Mamadou Diop</div>
+                                    <div class="list-item-subtitle">5 active • 45 completed</div>
+                                </div>
+                            </div>
+
+                            <div class="list-item" style="cursor: pointer; background: #f0f8ff; border-color: #667eea;">
+                                <div style="width: 20px; height: 20px; border: 2px solid #667eea; border-radius: 4px; background: #667eea; display: flex; align-items: center; justify-content: center; color: white; font-size: 14px;">✓</div>
+                                <div class="list-item-content" style="margin-left: 12px;">
+                                    <div class="list-item-title">Ibrahim Koné</div>
+                                    <div class="list-item-subtitle">3 active • 38 completed</div>
+                                </div>
+                            </div>
+
+                            <div class="list-item" style="cursor: pointer;">
+                                <div style="width: 20px; height: 20px; border: 2px solid #ddd; border-radius: 4px; background: white;"></div>
+                                <div class="list-item-content" style="margin-left: 12px;">
+                                    <div class="list-item-title">Ousmane Cissé</div>
+                                    <div class="list-item-subtitle">7 active • 62 completed</div>
+                                </div>
+                            </div>
+
+                            <div class="list-item" style="cursor: pointer;">
+                                <div style="width: 20px; height: 20px; border: 2px solid #ddd; border-radius: 4px; background: white;"></div>
+                                <div class="list-item-content" style="margin-left: 12px;">
+                                    <div class="list-item-title">Abdoulaye Sow</div>
+                                    <div class="list-item-subtitle">2 active • 28 completed</div>
+                                </div>
+                            </div>
+
+                            <div class="section-title">Additional Notes (Optional)</div>
+                            <div class="input-field">
+                                <div class="input-box" style="height: 80px;"></div>
+                            </div>
+
+                            <div class="button" style="margin-top: 20px;">Create Order</div>
+                        </div>
+                        <div class="bottom-nav">
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Dashboard</span>
+                            </div>
+                            <div class="nav-item active">
+                                <div class="nav-icon"></div>
+                                <span>Orders</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Customers</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Tailors</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Stats</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Confirmation Screen -->
+            <div class="screen-card" data-screen="order-confirmation">
+                <div class="screen-title">7. Order Created Successfully</div>
+                <div class="phone-frame">
+                    <div class="wireframe">
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <span>■■■</span>
+                        </div>
+                        <div class="app-header">
+                            <div style="width: 32px;"></div>
+                            <div class="app-title">Order Created</div>
+                            <div class="icon-button">×</div>
+                        </div>
+                        <div class="content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding-top: 60px;">
+                            <div style="width: 100px; height: 100px; border-radius: 50%; background: #4caf50; border: 4px solid #333; display: flex; align-items: center; justify-content: center; font-size: 50px; color: white; margin-bottom: 30px;">✓</div>
+                            
+                            <div style="font-size: 24px; font-weight: bold; margin-bottom: 10px; color: #333;">Order Created!</div>
+                            <div style="font-size: 14px; color: #666; margin-bottom: 30px;">Order #1246 has been created successfully</div>
+
+                            <div class="card" style="width: 100%; text-align: left; margin-bottom: 30px;">
+                                <div style="font-size: 12px; color: #666; margin-bottom: 8px;">ORDER DETAILS</div>
+                                <div class="card-detail"><strong>Customer:</strong> Fatima Diallo</div>
+                                <div class="card-detail"><strong>Model:</strong> Boubou</div>
+                                <div class="card-detail"><strong>Tailor:</strong> Ibrahim Koné</div>
+                                <div class="card-detail"><strong>Appointment:</strong> Feb 15, 2026</div>
+                                <div class="card-detail"><strong>Price:</strong> $120</div>
+                                <div class="card-detail"><strong>Paid:</strong> $50</div>
+                                <div class="card-detail"><strong>Balance:</strong> $70</div>
+                            </div>
+
+                            <div class="button primary" style="width: 100%;">View Order Details</div>
+                            <div class="button secondary" style="width: 100%;">Back to Orders</div>
+                        </div>
+                        <div class="bottom-nav">
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Dashboard</span>
+                            </div>
+                            <div class="nav-item active">
+                                <div class="nav-icon"></div>
+                                <span>Orders</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Customers</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Tailors</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Stats</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Customers List Screen -->
             <div class="screen-card" data-screen="customers">
                 <div class="screen-title">5. Customers List</div>
@@ -1437,6 +2319,166 @@
                             </div>
                         </div>
                         <div class="fab">+</div>
+                        <div class="bottom-nav">
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Dashboard</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Orders</span>
+                            </div>
+                            <div class="nav-item active">
+                                <div class="nav-icon"></div>
+                                <span>Customers</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Tailors</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Stats</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add Customer Screen -->
+            <div class="screen-card" data-screen="add-customer">
+                <div class="screen-title">Add New Customer</div>
+                <div class="phone-frame">
+                    <div class="wireframe">
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <span>■■■</span>
+                        </div>
+                        <div class="app-header">
+                            <div class="icon-button">×</div>
+                            <div class="app-title">Add Customer</div>
+                            <div style="width: 32px;"></div>
+                        </div>
+                        <div class="content">
+                            <div class="section-title">Customer Information</div>
+                            
+                            <div class="input-field">
+                                <label class="input-label">Full Name *</label>
+                                <div class="input-box"></div>
+                            </div>
+
+                            <div class="input-field">
+                                <label class="input-label">Telephone *</label>
+                                <div class="input-box"></div>
+                            </div>
+
+                            <div class="input-field">
+                                <label class="input-label">Address (Optional)</label>
+                                <div class="input-box" style="height: 60px;"></div>
+                            </div>
+
+                            <div class="section-title">Measurement Profiles</div>
+                            
+                            <div style="border: 2px dashed #ddd; border-radius: 8px; padding: 30px 20px; text-align: center; color: #999; background: #f9f9f9; margin-bottom: 12px;">
+                                <div style="font-size: 40px; margin-bottom: 10px;">📏</div>
+                                <div style="font-size: 14px; margin-bottom: 15px;">No measurements yet</div>
+                                <div class="button secondary">+ Add Measurement Profile</div>
+                            </div>
+
+                            <div class="button" style="margin-top: 20px;">Save Customer</div>
+                        </div>
+                        <div class="bottom-nav">
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Dashboard</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Orders</span>
+                            </div>
+                            <div class="nav-item active">
+                                <div class="nav-icon"></div>
+                                <span>Customers</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Tailors</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Stats</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add Customer with Measurements Screen -->
+            <div class="screen-card" data-screen="add-customer-with-measurements">
+                <div class="screen-title">Add Customer - With Measurements</div>
+                <div class="phone-frame">
+                    <div class="wireframe">
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <span>■■■</span>
+                        </div>
+                        <div class="app-header">
+                            <div class="icon-button">×</div>
+                            <div class="app-title">Add Customer</div>
+                            <div style="width: 32px;"></div>
+                        </div>
+                        <div class="content">
+                            <div class="section-title">Customer Information</div>
+                            
+                            <div class="input-field">
+                                <label class="input-label">Full Name *</label>
+                                <div class="input-box" style="display: flex; align-items: center; padding: 0 10px; color: #333;">
+                                    Aminata Diallo
+                                </div>
+                            </div>
+
+                            <div class="input-field">
+                                <label class="input-label">Telephone *</label>
+                                <div class="input-box" style="display: flex; align-items: center; padding: 0 10px; color: #333;">
+                                    +227 95 67 89 01
+                                </div>
+                            </div>
+
+                            <div class="input-field">
+                                <label class="input-label">Address (Optional)</label>
+                                <div class="input-box" style="height: 60px; display: flex; align-items: flex-start; padding: 10px; color: #333;">
+                                    Quartier Plateau
+                                </div>
+                            </div>
+
+                            <div class="section-title">Measurement Profiles</div>
+                            
+                            <div class="list-item">
+                                <div class="list-item-content">
+                                    <div class="list-item-title">Boubou Profile</div>
+                                    <div class="list-item-subtitle">8 measurements</div>
+                                </div>
+                                <div style="display: flex; gap: 8px;">
+                                    <div class="icon-button" style="width: 28px; height: 28px; font-size: 12px;">✎</div>
+                                    <div class="icon-button" style="width: 28px; height: 28px; font-size: 12px;">🗑</div>
+                                </div>
+                            </div>
+
+                            <div class="list-item">
+                                <div class="list-item-content">
+                                    <div class="list-item-title">Dress Profile</div>
+                                    <div class="list-item-subtitle">8 measurements</div>
+                                </div>
+                                <div style="display: flex; gap: 8px;">
+                                    <div class="icon-button" style="width: 28px; height: 28px; font-size: 12px;">✎</div>
+                                    <div class="icon-button" style="width: 28px; height: 28px; font-size: 12px;">🗑</div>
+                                </div>
+                            </div>
+
+                            <div class="button secondary">+ Add Measurement Profile</div>
+
+                            <div class="button" style="margin-top: 20px;">Save Customer</div>
+                        </div>
                         <div class="bottom-nav">
                             <div class="nav-item">
                                 <div class="nav-icon"></div>
@@ -1659,6 +2701,602 @@
                                 <div class="nav-icon"></div>
                                 <span>Stats</span>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add Measurement Screen -->
+            <div class="screen-card" data-screen="add-measurement">
+                <div class="screen-title">Add Measurement Profile</div>
+                <div class="phone-frame">
+                    <div class="wireframe">
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <span>■■■</span>
+                        </div>
+                        <div class="app-header">
+                            <div class="icon-button">←</div>
+                            <div class="app-title">New Measurement</div>
+                            <div class="icon-button">✓</div>
+                        </div>
+                        <div class="content">
+                            <div class="section-title">Profile Information</div>
+                            
+                            <div class="input-field">
+                                <label class="input-label">Profile Name *</label>
+                                <div class="input-box"></div>
+                                <div style="font-size: 11px; color: #999; margin-top: 4px;">e.g., "Boubou", "Suit", "Dress"</div>
+                            </div>
+
+                            <div class="input-field">
+                                <label class="input-label">Customer</label>
+                                <div class="input-box" style="display: flex; align-items: center; padding: 0 10px; color: #999;">
+                                    Fatima Diallo
+                                </div>
+                            </div>
+
+                            <div class="section-title">Standard Measurements (cm)</div>
+                            
+                            <div class="measurement-row">
+                                <div class="input-field" style="margin-bottom: 0;">
+                                    <label class="input-label">Height</label>
+                                    <div class="input-box"></div>
+                                </div>
+                                <div class="input-field" style="margin-bottom: 0;">
+                                    <label class="input-label">Chest/Bust</label>
+                                    <div class="input-box"></div>
+                                </div>
+                            </div>
+
+                            <div class="measurement-row">
+                                <div class="input-field" style="margin-bottom: 0;">
+                                    <label class="input-label">Waist</label>
+                                    <div class="input-box"></div>
+                                </div>
+                                <div class="input-field" style="margin-bottom: 0;">
+                                    <label class="input-label">Hip</label>
+                                    <div class="input-box"></div>
+                                </div>
+                            </div>
+
+                            <div class="measurement-row">
+                                <div class="input-field" style="margin-bottom: 0;">
+                                    <label class="input-label">Arm Length</label>
+                                    <div class="input-box"></div>
+                                </div>
+                                <div class="input-field" style="margin-bottom: 0;">
+                                    <label class="input-label">Shoulder Width</label>
+                                    <div class="input-box"></div>
+                                </div>
+                            </div>
+
+                            <div class="measurement-row">
+                                <div class="input-field" style="margin-bottom: 0;">
+                                    <label class="input-label">Trouser Length</label>
+                                    <div class="input-box"></div>
+                                </div>
+                                <div class="input-field" style="margin-bottom: 0;">
+                                    <label class="input-label">Garment Length</label>
+                                    <div class="input-box"></div>
+                                </div>
+                            </div>
+
+                            <div class="section-title">Custom Fields</div>
+                            
+                            <div class="button secondary">+ Add Custom Field</div>
+
+                            <div class="button" style="margin-top: 20px;">Save Measurement Profile</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Edit Measurement Screen -->
+            <div class="screen-card" data-screen="edit-measurement">
+                <div class="screen-title">Edit Measurement Profile</div>
+                <div class="phone-frame">
+                    <div class="wireframe">
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <span>■■■</span>
+                        </div>
+                        <div class="app-header">
+                            <div class="icon-button">←</div>
+                            <div class="app-title">Edit Measurement</div>
+                            <div class="icon-button">✓</div>
+                        </div>
+                        <div class="content">
+                            <div class="section-title">Profile Information</div>
+                            
+                            <div class="input-field">
+                                <label class="input-label">Profile Name *</label>
+                                <div class="input-box" style="display: flex; align-items: center; padding: 0 10px; color: #333;">
+                                    Boubou
+                                </div>
+                            </div>
+
+                            <div class="input-field">
+                                <label class="input-label">Customer</label>
+                                <div class="input-box" style="display: flex; align-items: center; padding: 0 10px; color: #999;">
+                                    Fatima Diallo
+                                </div>
+                            </div>
+
+                            <div class="section-title">Standard Measurements (cm)</div>
+                            
+                            <div class="measurement-row">
+                                <div class="input-field" style="margin-bottom: 0;">
+                                    <label class="input-label">Height</label>
+                                    <div class="input-box" style="display: flex; align-items: center; padding: 0 10px; color: #333;">
+                                        165
+                                    </div>
+                                </div>
+                                <div class="input-field" style="margin-bottom: 0;">
+                                    <label class="input-label">Chest/Bust</label>
+                                    <div class="input-box" style="display: flex; align-items: center; padding: 0 10px; color: #333;">
+                                        92
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="measurement-row">
+                                <div class="input-field" style="margin-bottom: 0;">
+                                    <label class="input-label">Waist</label>
+                                    <div class="input-box" style="display: flex; align-items: center; padding: 0 10px; color: #333;">
+                                        78
+                                    </div>
+                                </div>
+                                <div class="input-field" style="margin-bottom: 0;">
+                                    <label class="input-label">Hip</label>
+                                    <div class="input-box" style="display: flex; align-items: center; padding: 0 10px; color: #333;">
+                                        98
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="measurement-row">
+                                <div class="input-field" style="margin-bottom: 0;">
+                                    <label class="input-label">Arm Length</label>
+                                    <div class="input-box" style="display: flex; align-items: center; padding: 0 10px; color: #333;">
+                                        58
+                                    </div>
+                                </div>
+                                <div class="input-field" style="margin-bottom: 0;">
+                                    <label class="input-label">Shoulder Width</label>
+                                    <div class="input-box" style="display: flex; align-items: center; padding: 0 10px; color: #333;">
+                                        42
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="measurement-row">
+                                <div class="input-field" style="margin-bottom: 0;">
+                                    <label class="input-label">Trouser Length</label>
+                                    <div class="input-box" style="display: flex; align-items: center; padding: 0 10px; color: #333;">
+                                        102
+                                    </div>
+                                </div>
+                                <div class="input-field" style="margin-bottom: 0;">
+                                    <label class="input-label">Garment Length</label>
+                                    <div class="input-box" style="display: flex; align-items: center; padding: 0 10px; color: #333;">
+                                        145
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="section-title">Custom Fields</div>
+                            
+                            <div class="measurement-row">
+                                <div class="input-field" style="margin-bottom: 0;">
+                                    <label class="input-label">Neck</label>
+                                    <div class="input-box" style="display: flex; align-items: center; padding: 0 10px; color: #333;">
+                                        38
+                                    </div>
+                                </div>
+                                <div class="input-field" style="margin-bottom: 0;">
+                                    <label class="input-label">Sleeve Width</label>
+                                    <div class="input-box" style="display: flex; align-items: center; padding: 0 10px; color: #333;">
+                                        18
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="button secondary">+ Add Custom Field</div>
+
+                            <div class="button" style="margin-top: 20px;">Update Measurement Profile</div>
+                            <div class="button secondary">Delete Profile</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Screen -->
+            <div class="screen-card" data-screen="settings">
+                <div class="screen-title">Navigation Drawer</div>
+                <div class="phone-frame">
+                    <div class="wireframe">
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <span>■■■</span>
+                        </div>
+                        <div class="app-header">
+                            <div style="width: 32px;"></div>
+                            <div class="app-title">Settings</div>
+                            <div style="width: 32px;"></div>
+                        </div>
+                        <div class="content">
+                            <div class="section-title">Workshop Settings</div>
+                            
+                            <div class="list-item">
+                                <div class="list-item-content">
+                                    <div class="list-item-title">Models Catalog</div>
+                                    <div class="list-item-subtitle">Manage clothing models and photos</div>
+                                </div>
+                                <div class="icon-button">→</div>
+                            </div>
+
+                            <div class="list-item">
+                                <div class="list-item-content">
+                                    <div class="list-item-title">Workshop Profile</div>
+                                    <div class="list-item-subtitle">Business name, address, contact</div>
+                                </div>
+                                <div class="icon-button">→</div>
+                            </div>
+
+                            <div class="section-title">Preferences</div>
+
+                            <div class="list-item">
+                                <div class="list-item-content">
+                                    <div class="list-item-title">Currency</div>
+                                    <div class="list-item-subtitle">USD ($)</div>
+                                </div>
+                                <div class="icon-button">→</div>
+                            </div>
+
+                            <div class="list-item">
+                                <div class="list-item-content">
+                                    <div class="list-item-title">Measurement Units</div>
+                                    <div class="list-item-subtitle">Centimeters (cm)</div>
+                                </div>
+                                <div class="icon-button">→</div>
+                            </div>
+
+                            <div class="list-item">
+                                <div class="list-item-content">
+                                    <div class="list-item-title">Notifications</div>
+                                    <div class="list-item-subtitle">Order reminders, deadlines</div>
+                                </div>
+                                <div class="icon-button">→</div>
+                            </div>
+
+                    
+
+                            <div class="section-title">Account</div>
+
+                            <div class="list-item">
+                                <div class="list-item-content">
+                                    <div class="list-item-title">Edit Profile</div>
+                                    <div class="list-item-subtitle">Name, email, password</div>
+                                </div>
+                                <div class="icon-button">→</div>
+                            </div>
+
+                            <div class="list-item" style="border-color: #ff4444;">
+                                <div class="list-item-content">
+                                    <div class="list-item-title" style="color: #ff4444;">Logout</div>
+                                </div>
+                                <div class="icon-button" style="border-color: #ff4444; color: #ff4444;">→</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Models List Screen -->
+            <div class="screen-card" data-screen="models">
+                <div class="screen-title">Models Catalog</div>
+                <div class="phone-frame">
+                    <div class="wireframe">
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <span>■■■</span>
+                        </div>
+                        <div class="app-header">
+                            <div style="width: 32px;"></div>
+                            <div class="app-title">Models</div>
+                            <div class="icon-button">🔍</div>
+                        </div>
+                        <div class="content">
+                            <div class="section-title">Available Models</div>
+                            
+                            <div class="model-grid">
+                                <div class="model-card">
+                                    <div class="model-photo">👔</div>
+                                    <div class="model-info">
+                                        <div class="model-name">Boubou Traditionnel</div>
+                                        <div class="model-stats">4 photos • 23 orders</div>
+                                    </div>
+                                </div>
+
+                                <div class="model-card">
+                                    <div class="model-photo">👗</div>
+                                    <div class="model-info">
+                                        <div class="model-name">Robe Élégante</div>
+                                        <div class="model-stats">6 photos • 18 orders</div>
+                                    </div>
+                                </div>
+
+                                <div class="model-card">
+                                    <div class="model-photo">🤵</div>
+                                    <div class="model-info">
+                                        <div class="model-name">Costume 3 Pièces</div>
+                                        <div class="model-stats">5 photos • 31 orders</div>
+                                    </div>
+                                </div>
+
+                                <div class="model-card">
+                                    <div class="model-photo">👘</div>
+                                    <div class="model-info">
+                                        <div class="model-name">Caftan Moderne</div>
+                                        <div class="model-stats">3 photos • 15 orders</div>
+                                    </div>
+                                </div>
+
+                                <div class="model-card">
+                                    <div class="model-photo">🎽</div>
+                                    <div class="model-info">
+                                        <div class="model-name">Chemise Africaine</div>
+                                        <div class="model-stats">4 photos • 27 orders</div>
+                                    </div>
+                                </div>
+
+                                <div class="model-card">
+                                    <div class="model-photo">👔</div>
+                                    <div class="model-info">
+                                        <div class="model-name">Grand Boubou</div>
+                                        <div class="model-stats">5 photos • 42 orders</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fab">+</div>
+                        <div class="bottom-nav">
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Dashboard</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Orders</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Customers</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Tailors</span>
+                            </div>
+                            <div class="nav-item active">
+                                <div class="nav-icon"></div>
+                                <span>Stats</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Model Detail Screen -->
+            <div class="screen-card" data-screen="model-detail">
+                <div class="screen-title">Model Detail</div>
+                <div class="phone-frame">
+                    <div class="wireframe">
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <span>■■■</span>
+                        </div>
+                        <div class="app-header">
+                            <div class="icon-button">←</div>
+                            <div class="app-title">Model Details</div>
+                            <div class="icon-button">✎</div>
+                        </div>
+                        <div class="content">
+                            <div class="section-title">Model Information</div>
+                            
+                            <div class="card">
+                                <div class="card-title">Boubou Traditionnel</div>
+                                <div class="card-detail">Created: Dec 15, 2025</div>
+                                <div class="card-detail">Total orders: 23</div>
+                            </div>
+
+                            <div class="section-title">Photos</div>
+                            <div style="font-size: 11px; color: #999; margin-bottom: 8px;">⭐ Primary photo</div>
+                            
+                            <div class="photo-grid">
+                                <div class="photo-item primary">
+                                    <div class="photo-item-content">📷</div>
+                                </div>
+                                <div class="photo-item">
+                                    <div class="photo-item-content">📷</div>
+                                </div>
+                                <div class="photo-item">
+                                    <div class="photo-item-content">📷</div>
+                                </div>
+                                <div class="photo-item">
+                                    <div class="photo-item-content">📷</div>
+                                </div>
+                                <div class="photo-item add-photo">
+                                    <div class="photo-item-content">+</div>
+                                </div>
+                            </div>
+
+                            <div class="section-title">Recent Orders</div>
+                            
+                            <div class="list-item">
+                                <div class="list-item-content">
+                                    <div class="list-item-title">Order #1245 - Fatima Diallo</div>
+                                    <div class="list-item-subtitle">In Progress • Due: Jan 31</div>
+                                </div>
+                                <div class="badge urgent">D-1</div>
+                            </div>
+
+                            <div class="list-item">
+                                <div class="list-item-content">
+                                    <div class="list-item-title">Order #1230 - Aissata Sow</div>
+                                    <div class="list-item-subtitle">Completed • Jan 20</div>
+                                </div>
+                                <div class="badge completed">Done</div>
+                            </div>
+
+                            <div class="list-item">
+                                <div class="list-item-content">
+                                    <div class="list-item-title">Order #1215 - Mariam Kane</div>
+                                    <div class="list-item-subtitle">Delivered • Jan 10</div>
+                                </div>
+                                <div class="badge completed">Done</div>
+                            </div>
+
+                            <div class="button" style="margin-top: 20px;">Create Order with This Model</div>
+                            <div class="button secondary">Edit Model</div>
+                        </div>
+                        <div class="bottom-nav">
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Dashboard</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Orders</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Customers</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Tailors</span>
+                            </div>
+                            <div class="nav-item active">
+                                <div class="nav-icon"></div>
+                                <span>Stats</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add Model Screen -->
+            <div class="screen-card" data-screen="add-model">
+                <div class="screen-title">Add New Model</div>
+                <div class="phone-frame">
+                    <div class="wireframe">
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <span>■■■</span>
+                        </div>
+                        <div class="app-header">
+                            <div class="icon-button">×</div>
+                            <div class="app-title">New Model</div>
+                            <div class="icon-button">✓</div>
+                        </div>
+                        <div class="content">
+                            <div class="section-title">Model Information</div>
+                            
+                            <div class="input-field">
+                                <label class="input-label">Model Name *</label>
+                                <div class="input-box"></div>
+                                <div style="font-size: 11px; color: #999; margin-top: 4px;">e.g., "Boubou Traditionnel", "Robe Élégante"</div>
+                            </div>
+
+                            <div class="input-field">
+                                <label class="input-label">Description (Optional)</label>
+                                <div class="input-box" style="height: 80px;"></div>
+                            </div>
+
+                            <div class="section-title">Photos</div>
+                            <div style="font-size: 11px; color: #999; margin-bottom: 8px;">Add at least one photo. First photo will be primary.</div>
+                            
+                            <div class="photo-grid">
+                                <div class="photo-item add-photo">
+                                    <div class="photo-item-content">
+                                        <div>
+                                            <div style="font-size: 40px; margin-bottom: 4px;">📷</div>
+                                            <div style="font-size: 10px; color: #999;">Add Photo</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="border: 2px dashed #ddd; border-radius: 8px; padding: 20px; text-align: center; color: #999; background: #f9f9f9; margin-bottom: 12px;">
+                                <div style="font-size: 30px; margin-bottom: 8px;">📸</div>
+                                <div style="font-size: 12px; margin-bottom: 8px;">No photos added yet</div>
+                                <div class="button secondary" style="display: inline-block; padding: 8px 20px;">+ Add Photos</div>
+                            </div>
+
+                            <div class="button" style="margin-top: 20px;">Save Model</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add Model with Photos Screen -->
+            <div class="screen-card" data-screen="add-model-with-photos">
+                <div class="screen-title">Add Model - With Photos</div>
+                <div class="phone-frame">
+                    <div class="wireframe">
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <span>■■■</span>
+                        </div>
+                        <div class="app-header">
+                            <div class="icon-button">×</div>
+                            <div class="app-title">New Model</div>
+                            <div class="icon-button">✓</div>
+                        </div>
+                        <div class="content">
+                            <div class="section-title">Model Information</div>
+                            
+                            <div class="input-field">
+                                <label class="input-label">Model Name *</label>
+                                <div class="input-box" style="display: flex; align-items: center; padding: 0 10px; color: #333;">
+                                    Boubou Moderne
+                                </div>
+                            </div>
+
+                            <div class="input-field">
+                                <label class="input-label">Description (Optional)</label>
+                                <div class="input-box" style="height: 80px; display: flex; align-items: flex-start; padding: 10px; color: #333;">
+                                    Boubou moderne avec broderie élégante
+                                </div>
+                            </div>
+
+                            <div class="section-title">Photos (4)</div>
+                            <div style="font-size: 11px; color: #999; margin-bottom: 8px;">⭐ Tap to set as primary • Tap × to remove</div>
+                            
+                            <div class="photo-grid">
+                                <div class="photo-item primary">
+                                    <div class="photo-item-content">📷</div>
+                                    <div class="photo-delete-btn">×</div>
+                                </div>
+                                <div class="photo-item">
+                                    <div class="photo-item-content">📷</div>
+                                    <div class="photo-delete-btn">×</div>
+                                </div>
+                                <div class="photo-item">
+                                    <div class="photo-item-content">📷</div>
+                                    <div class="photo-delete-btn">×</div>
+                                </div>
+                                <div class="photo-item">
+                                    <div class="photo-item-content">📷</div>
+                                    <div class="photo-delete-btn">×</div>
+                                </div>
+                                <div class="photo-item add-photo">
+                                    <div class="photo-item-content">+</div>
+                                </div>
+                            </div>
+
+                            <div class="button" style="margin-top: 20px;">Save Model</div>
                         </div>
                     </div>
                 </div>
