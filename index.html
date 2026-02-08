@@ -1410,6 +1410,80 @@
             height: 2px;
             background: white;
         }
+
+        /* Key-Value Measurement Styles */
+        .measurement-kv-item {
+            border: 2px solid #333;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 12px;
+            background: white;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .measurement-kv-key {
+            flex: 1;
+        }
+
+        .measurement-kv-key input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            background: #f9f9f9;
+        }
+
+        .measurement-kv-value {
+            flex: 1;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .measurement-kv-value input {
+            flex: 1;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            background: #f9f9f9;
+        }
+
+        .measurement-kv-unit {
+            padding: 10px 12px;
+            border: 2px solid #333;
+            border-radius: 6px;
+            background: #f5f5f5;
+            font-size: 12px;
+            font-weight: 600;
+            min-width: 45px;
+            text-align: center;
+        }
+
+        .measurement-kv-delete {
+            width: 36px;
+            height: 36px;
+            border: 2px solid #ff4444;
+            border-radius: 50%;
+            background: white;
+            color: #ff4444;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .measurement-kv-label {
+            font-size: 11px;
+            color: #666;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
     </style>
 </head>
 <body>
@@ -1440,7 +1514,6 @@
             <button class="screen-btn" onclick="showScreen('add-measurement')">Add Measurement</button>
             <button class="screen-btn" onclick="showScreen('edit-measurement')">Edit Measurement</button>
             <button class="screen-btn" onclick="showScreen('settings')">Navigation Drawer</button>
-            <button class="screen-btn" onclick="showScreen('measurement-templates')">Measurement Templates</button>
             <button class="screen-btn" onclick="showScreen('models')">Models</button>
             <button class="screen-btn" onclick="showScreen('model-detail')">Model Detail</button>
             <button class="screen-btn" onclick="showScreen('add-model')">Add Model</button>
@@ -2373,16 +2446,13 @@
                             </div>
 
                             <div class="input-field">
-                                <label class="input-label">Address (Optional)</label>
-                                <div class="input-box" style="height: 60px;"></div>
+                                <label class="input-label">Gender</label>
+                                <div class="input-box"></div>
                             </div>
 
-                            <div class="section-title">Measurement Profiles</div>
-                            
-                            <div style="border: 2px dashed #ddd; border-radius: 8px; padding: 30px 20px; text-align: center; color: #999; background: #f9f9f9; margin-bottom: 12px;">
-                                <div style="font-size: 40px; margin-bottom: 10px;">📏</div>
-                                <div style="font-size: 14px; margin-bottom: 15px;">No measurements yet</div>
-                                <div class="button secondary">+ Add Measurement Profile</div>
+                            <div class="input-field">
+                                <label class="input-label">Address (Optional)</label>
+                                <div class="input-box" style="height: 60px;"></div>
                             </div>
 
                             <div class="button" style="margin-top: 20px;">Save Customer</div>
@@ -2445,37 +2515,18 @@
                             </div>
 
                             <div class="input-field">
+                                <label class="input-label">Gender</label>
+                                <div class="input-box" style="display: flex; align-items: center; padding: 0 10px; color: #333;">
+                                    Female
+                                </div>
+                            </div>
+
+                            <div class="input-field">
                                 <label class="input-label">Address (Optional)</label>
                                 <div class="input-box" style="height: 60px; display: flex; align-items: flex-start; padding: 10px; color: #333;">
                                     Quartier Plateau
                                 </div>
                             </div>
-
-                            <div class="section-title">Measurement Profiles</div>
-                            
-                            <div class="list-item">
-                                <div class="list-item-content">
-                                    <div class="list-item-title">Boubou Profile</div>
-                                    <div class="list-item-subtitle">8 measurements</div>
-                                </div>
-                                <div style="display: flex; gap: 8px;">
-                                    <div class="icon-button" style="width: 28px; height: 28px; font-size: 12px;">✎</div>
-                                    <div class="icon-button" style="width: 28px; height: 28px; font-size: 12px;">🗑</div>
-                                </div>
-                            </div>
-
-                            <div class="list-item">
-                                <div class="list-item-content">
-                                    <div class="list-item-title">Dress Profile</div>
-                                    <div class="list-item-subtitle">8 measurements</div>
-                                </div>
-                                <div style="display: flex; gap: 8px;">
-                                    <div class="icon-button" style="width: 28px; height: 28px; font-size: 12px;">✎</div>
-                                    <div class="icon-button" style="width: 28px; height: 28px; font-size: 12px;">🗑</div>
-                                </div>
-                            </div>
-
-                            <div class="button secondary">+ Add Measurement Profile</div>
 
                             <div class="button" style="margin-top: 20px;">Save Customer</div>
                         </div>
@@ -2525,6 +2576,8 @@
                                 <div class="profile-info">
                                     <div class="profile-name">Fatima Diallo</div>
                                     <div class="profile-detail">📞 +227 90 12 34 56</div>
+                                    <div class="profile-detail">👤 Female</div>
+                                    <div class="profile-detail">📍 Quartier Plateau, Niamey</div>
                                     <div class="profile-detail">Customer since: Jan 2024</div>
                                 </div>
                             </div>
@@ -2556,6 +2609,8 @@
                                 </div>
                                 <div class="icon-button">→</div>
                             </div>
+
+                            <div class="button secondary">+ Add Measurement Profile</div>
 
                             <div class="section-title">Recent Orders</div>
                             <div class="list-item">
@@ -2623,61 +2678,65 @@
                                 <div class="card-detail">Last updated: Jan 15, 2026</div>
                             </div>
 
-                            <div class="section-title">Standard Measurements</div>
-                            <div class="measurement-row">
-                                <div class="measurement-item">
-                                    <div class="measurement-label">Height</div>
-                                    <div class="measurement-value">165 cm</div>
-                                </div>
-                                <div class="measurement-item">
-                                    <div class="measurement-label">Chest/Bust</div>
-                                    <div class="measurement-value">92 cm</div>
-                                </div>
-                            </div>
-                            <div class="measurement-row">
-                                <div class="measurement-item">
-                                    <div class="measurement-label">Waist</div>
-                                    <div class="measurement-value">78 cm</div>
-                                </div>
-                                <div class="measurement-item">
-                                    <div class="measurement-label">Hip</div>
-                                    <div class="measurement-value">98 cm</div>
-                                </div>
-                            </div>
-                            <div class="measurement-row">
-                                <div class="measurement-item">
-                                    <div class="measurement-label">Arm Length</div>
-                                    <div class="measurement-value">58 cm</div>
-                                </div>
-                                <div class="measurement-item">
-                                    <div class="measurement-label">Shoulder Width</div>
-                                    <div class="measurement-value">42 cm</div>
-                                </div>
-                            </div>
-                            <div class="measurement-row">
-                                <div class="measurement-item">
-                                    <div class="measurement-label">Trouser Length</div>
-                                    <div class="measurement-value">102 cm</div>
-                                </div>
-                                <div class="measurement-item">
-                                    <div class="measurement-label">Garment Length</div>
-                                    <div class="measurement-value">145 cm</div>
+                            <div class="section-title">Measurements (8)</div>
+                            
+                            <div class="measurement-kv-item" style="background: #f9f9f9;">
+                                <div style="flex: 1;">
+                                    <div class="measurement-kv-label">Height</div>
+                                    <div style="font-size: 18px; font-weight: bold;">165 cm</div>
                                 </div>
                             </div>
 
-                            <div class="section-title">Custom Fields</div>
-                            <div class="measurement-row">
-                                <div class="measurement-item">
-                                    <div class="measurement-label">Neck</div>
-                                    <div class="measurement-value">38 cm</div>
-                                </div>
-                                <div class="measurement-item">
-                                    <div class="measurement-label">Sleeve Width</div>
-                                    <div class="measurement-value">18 cm</div>
+                            <div class="measurement-kv-item" style="background: #f9f9f9;">
+                                <div style="flex: 1;">
+                                    <div class="measurement-kv-label">Chest</div>
+                                    <div style="font-size: 18px; font-weight: bold;">92 cm</div>
                                 </div>
                             </div>
 
-                            <div class="button">Duplicate Profile</div>
+                            <div class="measurement-kv-item" style="background: #f9f9f9;">
+                                <div style="flex: 1;">
+                                    <div class="measurement-kv-label">Waist</div>
+                                    <div style="font-size: 18px; font-weight: bold;">78 cm</div>
+                                </div>
+                            </div>
+
+                            <div class="measurement-kv-item" style="background: #f9f9f9;">
+                                <div style="flex: 1;">
+                                    <div class="measurement-kv-label">Hip</div>
+                                    <div style="font-size: 18px; font-weight: bold;">98 cm</div>
+                                </div>
+                            </div>
+
+                            <div class="measurement-kv-item" style="background: #f9f9f9;">
+                                <div style="flex: 1;">
+                                    <div class="measurement-kv-label">Arm Length</div>
+                                    <div style="font-size: 18px; font-weight: bold;">58 cm</div>
+                                </div>
+                            </div>
+
+                            <div class="measurement-kv-item" style="background: #f9f9f9;">
+                                <div style="flex: 1;">
+                                    <div class="measurement-kv-label">Shoulder Width</div>
+                                    <div style="font-size: 18px; font-weight: bold;">42 cm</div>
+                                </div>
+                            </div>
+
+                            <div class="measurement-kv-item" style="background: #f9f9f9;">
+                                <div style="flex: 1;">
+                                    <div class="measurement-kv-label">Trouser Length</div>
+                                    <div style="font-size: 18px; font-weight: bold;">102 cm</div>
+                                </div>
+                            </div>
+
+                            <div class="measurement-kv-item" style="background: #f9f9f9;">
+                                <div style="flex: 1;">
+                                    <div class="measurement-kv-label">Garment Length</div>
+                                    <div style="font-size: 18px; font-weight: bold;">145 cm</div>
+                                </div>
+                            </div>
+
+                            <div class="button" style="margin-top: 12px;">Duplicate Profile</div>
                             <div class="button secondary">Edit Measurements</div>
                         </div>
                         <div class="bottom-nav">
@@ -2736,55 +2795,44 @@
                                 </div>
                             </div>
 
-                            <div class="section-title">Standard Measurements (cm)</div>
+                            <div class="section-title">Measurements</div>
+                            <div style="font-size: 12px; color: #666; margin-bottom: 12px;">Add custom measurements as key-value pairs</div>
                             
-                            <div class="measurement-row">
-                                <div class="input-field" style="margin-bottom: 0;">
-                                    <label class="input-label">Height</label>
-                                    <div class="input-box"></div>
+                            <div class="measurement-kv-item">
+                                <div style="flex: 1;">
+                                    <div class="measurement-kv-label">Measurement Name</div>
+                                    <input type="text" placeholder="e.g., Height, Chest, Waist" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-size: 14px;">
                                 </div>
-                                <div class="input-field" style="margin-bottom: 0;">
-                                    <label class="input-label">Chest/Bust</label>
-                                    <div class="input-box"></div>
-                                </div>
-                            </div>
-
-                            <div class="measurement-row">
-                                <div class="input-field" style="margin-bottom: 0;">
-                                    <label class="input-label">Waist</label>
-                                    <div class="input-box"></div>
-                                </div>
-                                <div class="input-field" style="margin-bottom: 0;">
-                                    <label class="input-label">Hip</label>
-                                    <div class="input-box"></div>
+                                <div style="flex: 1; display: flex; gap: 8px;">
+                                    <div style="flex: 1;">
+                                        <div class="measurement-kv-label">Value</div>
+                                        <input type="number" placeholder="0" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-size: 14px;">
+                                    </div>
+                                    <div>
+                                        <div class="measurement-kv-label">Unit</div>
+                                        <div class="measurement-kv-unit">cm</div>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="measurement-row">
-                                <div class="input-field" style="margin-bottom: 0;">
-                                    <label class="input-label">Arm Length</label>
-                                    <div class="input-box"></div>
+                            <div class="measurement-kv-item">
+                                <div style="flex: 1;">
+                                    <div class="measurement-kv-label">Measurement Name</div>
+                                    <input type="text" placeholder="e.g., Height, Chest, Waist" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-size: 14px;">
                                 </div>
-                                <div class="input-field" style="margin-bottom: 0;">
-                                    <label class="input-label">Shoulder Width</label>
-                                    <div class="input-box"></div>
-                                </div>
-                            </div>
-
-                            <div class="measurement-row">
-                                <div class="input-field" style="margin-bottom: 0;">
-                                    <label class="input-label">Trouser Length</label>
-                                    <div class="input-box"></div>
-                                </div>
-                                <div class="input-field" style="margin-bottom: 0;">
-                                    <label class="input-label">Garment Length</label>
-                                    <div class="input-box"></div>
+                                <div style="flex: 1; display: flex; gap: 8px;">
+                                    <div style="flex: 1;">
+                                        <div class="measurement-kv-label">Value</div>
+                                        <input type="number" placeholder="0" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-size: 14px;">
+                                    </div>
+                                    <div>
+                                        <div class="measurement-kv-label">Unit</div>
+                                        <div class="measurement-kv-unit">cm</div>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="section-title">Custom Fields</div>
-                            
-                            <div class="button secondary">+ Add Custom Field</div>
+                            <div class="button secondary">+ Add Measurement Field</div>
 
                             <div class="button" style="margin-top: 20px;">Save Measurement Profile</div>
                         </div>
@@ -2823,86 +2871,82 @@
                                 </div>
                             </div>
 
-                            <div class="section-title">Standard Measurements (cm)</div>
+                            <div class="section-title">Measurements (8)</div>
+                            <div style="font-size: 12px; color: #666; margin-bottom: 12px;">Edit or remove measurements</div>
                             
-                            <div class="measurement-row">
-                                <div class="input-field" style="margin-bottom: 0;">
-                                    <label class="input-label">Height</label>
-                                    <div class="input-box" style="display: flex; align-items: center; padding: 0 10px; color: #333;">
-                                        165
+                            <div class="measurement-kv-item">
+                                <div style="flex: 1;">
+                                    <div class="measurement-kv-label">Measurement Name</div>
+                                    <input type="text" value="Height" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-size: 14px;">
+                                </div>
+                                <div style="flex: 1; display: flex; gap: 8px;">
+                                    <div style="flex: 1;">
+                                        <div class="measurement-kv-label">Value</div>
+                                        <input type="number" value="165" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-size: 14px;">
+                                    </div>
+                                    <div>
+                                        <div class="measurement-kv-label">Unit</div>
+                                        <div class="measurement-kv-unit">cm</div>
                                     </div>
                                 </div>
-                                <div class="input-field" style="margin-bottom: 0;">
-                                    <label class="input-label">Chest/Bust</label>
-                                    <div class="input-box" style="display: flex; align-items: center; padding: 0 10px; color: #333;">
-                                        92
-                                    </div>
-                                </div>
+                                <div class="measurement-kv-delete">×</div>
                             </div>
 
-                            <div class="measurement-row">
-                                <div class="input-field" style="margin-bottom: 0;">
-                                    <label class="input-label">Waist</label>
-                                    <div class="input-box" style="display: flex; align-items: center; padding: 0 10px; color: #333;">
-                                        78
+                            <div class="measurement-kv-item">
+                                <div style="flex: 1;">
+                                    <div class="measurement-kv-label">Measurement Name</div>
+                                    <input type="text" value="Chest" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-size: 14px;">
+                                </div>
+                                <div style="flex: 1; display: flex; gap: 8px;">
+                                    <div style="flex: 1;">
+                                        <div class="measurement-kv-label">Value</div>
+                                        <input type="number" value="92" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-size: 14px;">
+                                    </div>
+                                    <div>
+                                        <div class="measurement-kv-label">Unit</div>
+                                        <div class="measurement-kv-unit">cm</div>
                                     </div>
                                 </div>
-                                <div class="input-field" style="margin-bottom: 0;">
-                                    <label class="input-label">Hip</label>
-                                    <div class="input-box" style="display: flex; align-items: center; padding: 0 10px; color: #333;">
-                                        98
-                                    </div>
-                                </div>
+                                <div class="measurement-kv-delete">×</div>
                             </div>
 
-                            <div class="measurement-row">
-                                <div class="input-field" style="margin-bottom: 0;">
-                                    <label class="input-label">Arm Length</label>
-                                    <div class="input-box" style="display: flex; align-items: center; padding: 0 10px; color: #333;">
-                                        58
+                            <div class="measurement-kv-item">
+                                <div style="flex: 1;">
+                                    <div class="measurement-kv-label">Measurement Name</div>
+                                    <input type="text" value="Waist" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-size: 14px;">
+                                </div>
+                                <div style="flex: 1; display: flex; gap: 8px;">
+                                    <div style="flex: 1;">
+                                        <div class="measurement-kv-label">Value</div>
+                                        <input type="number" value="78" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-size: 14px;">
+                                    </div>
+                                    <div>
+                                        <div class="measurement-kv-label">Unit</div>
+                                        <div class="measurement-kv-unit">cm</div>
                                     </div>
                                 </div>
-                                <div class="input-field" style="margin-bottom: 0;">
-                                    <label class="input-label">Shoulder Width</label>
-                                    <div class="input-box" style="display: flex; align-items: center; padding: 0 10px; color: #333;">
-                                        42
-                                    </div>
-                                </div>
+                                <div class="measurement-kv-delete">×</div>
                             </div>
 
-                            <div class="measurement-row">
-                                <div class="input-field" style="margin-bottom: 0;">
-                                    <label class="input-label">Trouser Length</label>
-                                    <div class="input-box" style="display: flex; align-items: center; padding: 0 10px; color: #333;">
-                                        102
+                            <div class="measurement-kv-item">
+                                <div style="flex: 1;">
+                                    <div class="measurement-kv-label">Measurement Name</div>
+                                    <input type="text" value="Hip" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-size: 14px;">
+                                </div>
+                                <div style="flex: 1; display: flex; gap: 8px;">
+                                    <div style="flex: 1;">
+                                        <div class="measurement-kv-label">Value</div>
+                                        <input type="number" value="98" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-size: 14px;">
+                                    </div>
+                                    <div>
+                                        <div class="measurement-kv-label">Unit</div>
+                                        <div class="measurement-kv-unit">cm</div>
                                     </div>
                                 </div>
-                                <div class="input-field" style="margin-bottom: 0;">
-                                    <label class="input-label">Garment Length</label>
-                                    <div class="input-box" style="display: flex; align-items: center; padding: 0 10px; color: #333;">
-                                        145
-                                    </div>
-                                </div>
+                                <div class="measurement-kv-delete">×</div>
                             </div>
 
-                            <div class="section-title">Custom Fields</div>
-                            
-                            <div class="measurement-row">
-                                <div class="input-field" style="margin-bottom: 0;">
-                                    <label class="input-label">Neck</label>
-                                    <div class="input-box" style="display: flex; align-items: center; padding: 0 10px; color: #333;">
-                                        38
-                                    </div>
-                                </div>
-                                <div class="input-field" style="margin-bottom: 0;">
-                                    <label class="input-label">Sleeve Width</label>
-                                    <div class="input-box" style="display: flex; align-items: center; padding: 0 10px; color: #333;">
-                                        18
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="button secondary">+ Add Custom Field</div>
+                            <div class="button secondary">+ Add Measurement Field</div>
 
                             <div class="button" style="margin-top: 20px;">Update Measurement Profile</div>
                             <div class="button secondary">Delete Profile</div>
@@ -2970,8 +3014,6 @@
                                 <div class="icon-button">→</div>
                             </div>
 
-                    
-
                             <div class="section-title">Account</div>
 
                             <div class="list-item">
@@ -2987,6 +3029,28 @@
                                     <div class="list-item-title" style="color: #ff4444;">Logout</div>
                                 </div>
                                 <div class="icon-button" style="border-color: #ff4444; color: #ff4444;">→</div>
+                            </div>
+                        </div>
+                        <div class="bottom-nav">
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Dashboard</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Orders</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Customers</span>
+                            </div>
+                            <div class="nav-item">
+                                <div class="nav-icon"></div>
+                                <span>Tailors</span>
+                            </div>
+                            <div class="nav-item active">
+                                <div class="nav-icon"></div>
+                                <span>Stats</span>
                             </div>
                         </div>
                     </div>
@@ -3138,7 +3202,6 @@
                             <div class="button" style="margin-top: 20px;">Create Order with This Model</div>
                             <div class="button secondary">Edit Model</div>
                         </div>
-                    
                     </div>
                 </div>
             </div>
